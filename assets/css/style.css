@@ -9,15 +9,22 @@
 /* FONT
 ================================================== */
 @font-face {
-  font-family: 'fontello';
-  src: url('../fonts/fontello.eot?37927580');
-  src: url('../fonts/fontello.eot?37927580#iefix') format('embedded-opentype'),
-       url('../fonts/fontello.woff2?37927580') format('woff2'),
-       url('../fonts/fontello.woff?37927580') format('woff'),
-       url('../fonts/fontello.ttf?37927580') format('truetype'),
-       url('../fonts/fontello.svg?37927580#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot?99980237');
+    src: url('../fonts/fontello.eot?99980237#iefix') format('embedded-opentype'),
+    url('../fonts/fontello.woff2?99980237') format('woff2'),
+    url('../fonts/fontello.woff?99980237') format('woff'),
+    url('../fonts/fontello.ttf?99980237') format('truetype'),
+    url('../fonts/fontello.svg?99980237#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'fontello';
+        src: url('../fonts/fontello.svg?99980237#fontello') format('svg');
+    }
 }
  
  [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -37,13 +44,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
- 
+
+.icon-dot-3:before { content: '\e801'; } /* '' */
+.icon-link:before { content: '\e802'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
-.icon-facebook:before { content: '\f09a'; } /* '' */
-.icon-gplus:before { content: '\f0d5'; } /* '' */
-.icon-linkedin:before { content: '\f0e1'; } /* '' */
-.icon-linkedin:before { content: '\f0e1'; } /* '' */
-.icon-up:before { content: '\f176'; } /* '' */
+.icon-github-circled:before { content: '\f09b'; } /* '' */
+.icon-mail-alt:before { content: '\f0e0'; } /* '' */
+.icon-facebook-squared:before { content: '\f308'; } /* '' */
+.icon-linkedin-squared:before { content: '\f30c'; } /* '' */
+.icon-up-big:before { content: '\e800'; } /* '' */
 
 /* CUSTOM RESETS
 ================================================== */
@@ -89,7 +98,20 @@ h4 {
 .btn-border {
     background-color: transparent;
     color: #212121;
-    border: 1px solid #212121; 
+    border: 1px solid #212121;
+}
+
+.btn-border-reverse {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    transition: 0.3s;
+}
+
+.btn-border-reverse:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
 }
 
 .btn-fill:hover,
@@ -106,7 +128,7 @@ h4 {
 .form-control {
     padding-left: 10px;
     border: 0;
-    border-bottom: 1px solid #212121;
+    border-bottom: 1px solid grey;
     border-radius: 0;
     background-color: transparent; 
     box-shadow: none;
@@ -123,6 +145,7 @@ textarea {
 .form-control:focus {
     box-shadow: none;
     border-bottom-color: #e1e1e1;
+    color: #e1e1e1;
 }
 
 ::-moz-placeholder,
@@ -137,7 +160,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #212121;
 }
@@ -170,8 +193,16 @@ html, body {
     z-index: 5;
 }
 
-.site-logo img {
+.site-logo {
+    font-family: 'Major Mono Display', serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
     padding-bottom: 2px;
+}
+
+.site-logo:hover {
+    color: grey;
 }
 
 /* Navigation */
@@ -190,6 +221,7 @@ html, body {
 
 .navbar-nav.navbar-right {
     margin-right: 0;
+    margin-top: 4px;
 }
 
 .navbar-nav > li + li > a {
@@ -211,7 +243,7 @@ html, body {
 /* HERO
 ================================================== */
 .hero { 
-    background: url(../img/hero.jpg) no-repeat center / cover; 
+    background: url(../img/bg.png) no-repeat center / cover;
     height: 100%;
     width: 100%;
     min-height: 700px;
@@ -243,14 +275,15 @@ html, body {
 .hero h1 {
     font-size: 46px;
     font-weight: 700;
-    margin: 0 0 15px;
-    text-transform: uppercase;
+    margin: 200px 0 15px;
+    line-height: 2;
+    /*text-transform: uppercase;*/
 }
 
-.job-title {
+.intro {
     font-size: 22px;
     margin-bottom: 30px;
-    line-height: 1;
+    line-height: 1.5;
 } 
 
 .hero img {
@@ -262,7 +295,7 @@ html, body {
 .site-main {
     position: relative;
     margin-bottom: 100px;
-    background-color: #fff;
+    background-color: black;
     z-index: 1;
 }
 /* site-section */
@@ -273,6 +306,7 @@ html, body {
 .site-section h2,
 .site-section h3 {
     font-size: 36px;
+    color: white;
     margin: 0;
     text-transform: uppercase;
 }
@@ -281,13 +315,26 @@ html, body {
     margin: 15px 0 40px;
 }
 
+.reverse-color {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+.inline-logo {
+    height: 30px;
+    vertical-align: bottom;
+}
+
 .site-section p {
     margin-bottom: 35px;
+    color: white;
+    font-size: 20px;
 }
 
 /* Section: Skills */
 .section-skills {
     padding-bottom: 120px;
+    color: white;
 }
 
 .skill + .skill {
@@ -296,20 +343,20 @@ html, body {
 
 .skill h4 {
     font-size: 24px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     margin: 0 0 15px;
 }
 
 .progress {
-    height: 15px;
+    height: 5px;
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #dfdfdf;
+    background-color: black;
     box-shadow: none;
 }
 
 .progress-bar {
-    background-color: #212121;  
+    background-color: white;
 }
 
 /* Section: Services */
@@ -320,7 +367,7 @@ html, body {
 
 .section-services:before {
     content: '';
-    background: url(../img/services-bg.jpg) no-repeat fixed center / cover;
+    background: url(../img/neural-network-bg.jpeg) no-repeat fixed center / cover;
     width: 100%;
     height: 400px; 
     position: absolute;
@@ -333,18 +380,22 @@ html, body {
     width: 100%;
     height: 400px; 
     position: absolute;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(0,0,0,0.3);
     top: 0;
     left: 0;
     z-index: 0;
 }
 
 .section-services .container {
-    padding: 120px 100px;
+    padding: 100px 60px;
     position: relative;
     background-color: #fff;
     box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
+}
+
+.service {
+    padding: 0 10px 0;
 }
 
 .service h4 {
@@ -411,16 +462,21 @@ html, body {
 }
 
 .portfolio-item-info h4 {
+    position: relative;
+    bottom: 30px;
     margin: 0 0 20px;
     font-weight: 700;
     color: #fff;
 }
 
 .portfolio-item-info a {
-    padding: 6px 7px 4px;
-    font-size: 12px;
+    padding: 6px 4px 6px;
+    margin-right: 5px;
+    font-size: 20px;
+    position: relative;
+    bottom: 30px;
     border: 1px solid #fff;
-    border-radius: 50px;
+    border-radius: 50%;
     color: #fff;
     transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
     -moz-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
@@ -476,8 +532,21 @@ html, body {
     box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.2);
 }
 
+.modal-body {
+    padding: 10px 15px 10px;
+}
+
 .modal-body h4 {
     font-weight: 700;
+}
+
+.modal-body > ul {
+    font-size: 20px;
+    padding: 10px 40px 5px;
+}
+
+.modal-body li {
+    margin-bottom: 5px;
 }
 
 .modal-footer {
@@ -486,7 +555,7 @@ html, body {
 
 /* Section: Counters */
 .section-counters {
-    background: url(../img/counters-bg.jpg) no-repeat fixed center / cover;
+    background: url(../img/code-bg.jpeg) no-repeat fixed center / cover;
     width: 100%;
     padding: 100px 0;
     position: relative;
@@ -499,20 +568,26 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.5);
 }
 
-.section-counters h4 {
+#typed {
+    text-align: left;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: left;
+    font-family: "Fira Code", sans-serif;
+    font-size: 30px;
+    line-height: 1.5;
     color: #fff;
     margin: 25px 0 0;
+    display: inline;
 }
 
-.site-section p.counter {
-    font-size: 100px;
-    font-weight: 300;
-    color: #fff;
-    margin: 0;
-    line-height: 0.8;
+.typed-cursor {
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 /* Section: Form*/
@@ -537,6 +612,7 @@ html, body {
 
 .icon {
     line-height: 40px;
+    font-size: 20px;
     padding: 9px 11px;
     color: #fff;
     border: 1px solid #fff;
@@ -552,7 +628,7 @@ html, body {
 }
 
 .icon:hover {
-    background-color: #fff;
+    background-color: white;
 }
 
 .site-footer a {
@@ -565,8 +641,9 @@ html, body {
 
 a.twitter-bg:hover {color: #55acee;}
 a.facebook-bg:hover{color: #3b5998;}
-a.gplus-bg:hover{color: #007bb5;} 
-a.linkedin-bg:hover {color: #dd4b39;}
+a.linkedin-bg:hover{color: #007bb5;}
+a.mail-bg:hover{color: #D44638}
+a.github-bg:hover{color: #211F1F}
 a.icon-up-bg:hover {color: #212121;}
 
 .copyright {

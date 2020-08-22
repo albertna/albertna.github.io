@@ -60,10 +60,6 @@
 		font-size: 38px
 	}
 
-	.job-title {
-		font-size: 20px;
-	}
-
 	.hero img {
 		height: 420px;
 	}
@@ -122,13 +118,22 @@
 		padding: 70px 0;
 	}
 
-	.site-section p.counter {
-		font-size: 80px;
+	#typed {
+		font-size: 20px;
+	}
+
+	.typed-cursor {
+		font-size: 20px;
+		font-weight: bolder;
 	}
 
 	/* Modal */
 	.modal-header {
 		height: 350px;
+	}
+
+	.modal-body ul {
+		font-size: 16px;
 	}
 }
 
@@ -298,13 +303,14 @@
 	}
 
 	.hero h1 {
-		font-size: 32px
-		margin-bottom: 10px;
+		font-size: 40px;
+		margin-top: 150px;
+		margin-bottom: 0;
 	}
 
-	.job-title {
+	.intro {
 		font-size: 18px;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 	}
 
 	.hero img {
@@ -343,13 +349,16 @@
 
 	/* Section: Skills */
 	.skill h4 {
-	    text-transform: uppercase;
 	    margin-bottom: 10px;
 	}
 
 	/* Section: Services */
 	.section-services {
 		padding-top: 180px;
+	}
+
+	.service {
+		padding: 10px 0 0;
 	}
 
 	.service h4 {
@@ -440,6 +449,17 @@
 
 	.section-portfolio .btn {
 		margin-top: 25px;
+	}
+
+	.portfolio-item-info h4{
+		font-size: 40px;
+		position: relative;
+		bottom: 40px;
+	}
+
+	.portfolio-item-info a{
+		font-size: 25px;
+		bottom: 40px;
 	}
 
 	/* FOOTER
