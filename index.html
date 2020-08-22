@@ -570,15 +570,30 @@
 <script src="assets/js/jquery.countTo.min.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script>
   const typed = new Typed('#typed', {
     strings: [
       "My passion is to make things that improve the status quo.",
       "Create to make lives better.",
     ],
-    typeSpeed: 30,
+    typeSpeed: 25,
     backSpeed: 0,
     backDelay: 1500,
+    // loop: true,
+  });
+  /* stop type.js*/
+  typed.stop();
+  /* hide type.js cursoer */
+  //$(".typed-cursor").hide();
+  /* dedect scroll into view */
+  $("#typed").waypoint({
+    element: document.getElementById('typed'),
+    handler: function() {
+      typed.start();
+      //$(".typed-cursor").show();
+    },
+    offset: 'bottom-in-view'
   });
 </script>
 
